@@ -1,0 +1,54 @@
+<link rel="import" href="bower_components/paper-card/paper-card.html">
+<link rel="import" href="bower_components/paper-input/paper-input.html">
+<link rel="import" href="bower_components/paper-button/paper-button.html">
+
+<dom-module id="login-form">
+	<template>
+		<style>
+			form { width: 300px; padding: 10px; }
+			
+			paper-button {
+				--paper-button: {
+					background-color:#006064;
+					font-weight:bold;
+					color: white;
+				};
+			}
+			
+			paper-card {
+				--paper-card-header-color: white;
+				
+				--paper-card-header: {
+					background-color:#C51162;
+				};
+			}
+		</style>
+		
+		<paper-card heading="{{heading}}">
+			<form method="post" action="" id="{{id}}">
+				<paper-input name="email" label="Email Address"></paper-input>
+				<paper-input name="pass" label="Password"></paper-input>
+				<paper-button on-click="submitform" raised>Login</paper-button>
+			</form>
+		</paper-card>
+	</template>
+	
+	
+	<script>
+		Polymer({
+			is: "login-form",
+			
+			properties: {
+				id: String,
+				heading: String,
+			},
+			
+			submitform: function(e) {
+				alert('You click this');
+				// your own code
+			}
+		});
+	</script>
+</dom-module>
+
+
